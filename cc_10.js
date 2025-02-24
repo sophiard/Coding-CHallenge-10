@@ -1,3 +1,4 @@
+//task 1 
 class Product {
     constructor(name, id, price, stock) {
         this.name = name,
@@ -20,3 +21,24 @@ console.log("Task 1 part 1:", prod1.getDetails());
 prod1.updateStock(3);
 console.log("Task 1 part 2:", prod1.getDetails());  
 //logged output 
+
+
+// Task 2 - Created Order Class
+class Order {
+    constructor(orderId, product, quantity) {
+        this.orderId = orderId,
+        this.product = product,
+        this.quantity = quantity
+        //set up orderid, producut, and quanitty 
+
+        this.product.updateStock(this.quantity) //updates the stock
+    }
+    getOrderDetails(){
+        const totalPrice = this.product.price * this.quantity //calculates the total price 
+        return `Order ID: ${this.orderId}, Product: ${this.product.name}, Quantity: ${this.quantity}, Total Price: $${totalPrice}`;
+    }// retuning the order detials
+};
+const order1 = new Order(501, prod1, 2);
+console.log("Task 2 part 1:", order1.getOrderDetails());
+console.log("Task 2 part 2:", prod1.getDetails()); 
+//logging output 
