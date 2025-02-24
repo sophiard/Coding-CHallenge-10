@@ -11,7 +11,7 @@ class Product {
     }
     updateStock(quantity) {
         if (quantity > this.stock) {
-            return `Not Enough Available Stock For This Item`; // if order was higher than stock available 
+            return `Not Enough stock`; // if order was higher than stock available 
         }
         this.stock -= quantity; // This helps reduce stock and quantity 
     }
@@ -68,7 +68,7 @@ class Inventory {
 
 //task 4 
     listOrders() {
-        this.orders.forEach(order => console.log("Task 4:", order.getOrderDetails())); 
+        this.orders.forEach(order => console.log("Task 4 part 1:", order.getOrderDetails())); 
     }
     //logged order
 
@@ -88,8 +88,8 @@ inventory.listProducts();  //lists all products in iventory
 // Task 4 logging 
 inventory.placeOrder(601, prod1, 2);// placed an order
 inventory.listOrders();
-console.log("task 4:", prod1.getDetails()); //shows detials placed
+console.log("task 4 part 2:", prod1.getDetails()); //shows detials placed
 
 // Task 5 logging
 inventory.restockProduct(101, 5);// restocked an order
-console.log("Task 5:", prod1.getDetails());//show dletials after restock
+console.log("Task 5:", prod1.getDetails());//show details after restock
