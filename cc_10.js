@@ -7,7 +7,7 @@ class Product {
         this.stock = stock
     };// Sets up product as a class 
     getDetails() {
-        return `Item: ${this.name}, ID: ${this.id}, Price: $${this.price}, Available Stock: ${this.stock}`
+        return `Product: ${this.name}, ID: ${this.id}, Price: $${this.price}, Available Stock: ${this.stock}`
     }
     updateStock(quantity){
        if(quantity > this.stock) {
@@ -42,3 +42,23 @@ const order1 = new Order(501, prod1, 2);
 console.log("Task 2 part 1:", order1.getOrderDetails());
 console.log("Task 2 part 2:", prod1.getDetails()); 
 //logging output 
+
+//Task 3 - Created Inventory Class
+class Inventory {
+    constructor() {
+        this.products = []; //sets up an array
+    }
+    addProduct(product) {
+        this.products.push(product); //adds a new product 
+    }
+
+    listProducts() { 
+        this.products.forEach(product => console.log(product.getDetails()));
+    }
+}
+
+const inventory = new Inventory();
+inventory.addProduct(prod1);
+inventory.listProducts();
+//logged new output 
+
