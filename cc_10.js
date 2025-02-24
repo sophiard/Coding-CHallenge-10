@@ -70,25 +70,26 @@ class Inventory {
     listOrders() {
         this.orders.forEach(order => console.log("Task 4:", order.getOrderDetails())); 
     }
+    //logged order
 
-    // Task 5 Implementing Product Restocking 
+    // Task 5 Implemented Product Restocking
     restockProduct(productId, quantity) {
         let product = this.products.find(product => product.id === productId);
         if (product) {
-            product.stock += quantity;
+            product.stock += quantity;//incresing stock
         }
-    }
+    }//makes a restock for a product using ID
 }
 
 const inventory = new Inventory();
-inventory.addProduct(prod1);
-inventory.listProducts(); 
+inventory.addProduct(prod1); //adding new product to inventoy 
+inventory.listProducts();  //lists all products in iventory 
 
 // Task 4 logging 
-inventory.placeOrder(601, prod1, 2);
-inventory.listOrders(); 
-console.log("task 4:", prod1.getDetails()); 
+inventory.placeOrder(601, prod1, 2);// placed an order
+inventory.listOrders();
+console.log("task 4:", prod1.getDetails()); //shows detials placed
 
 // Task 5 logging
-inventory.restockProduct(101, 5);
-console.log("Task 5:", prod1.getDetails());
+inventory.restockProduct(101, 5);// restocked an order
+console.log("Task 5:", prod1.getDetails());//show detials after restock
