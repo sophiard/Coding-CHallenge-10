@@ -92,4 +92,4 @@ console.log("task 4:", prod1.getDetails()); //shows detials placed
 
 // Task 5 logging
 inventory.restockProduct(101, 5);// restocked an order
-console.log("Task 5:", prod1.getDetails());//show detials after restock
+console.log("Task 5:", prod1.getDetails());//show dletials after restock
